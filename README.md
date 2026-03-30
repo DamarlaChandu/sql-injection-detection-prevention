@@ -46,8 +46,8 @@ Add files:
 
 ### 🔹 Step 3: Create Database (phpMyAdmin)
 1. Open browser:**http://localhost/phpmyadmin**
-2. Click **New**
-3. Create database:sqli_lab
+2.  Click **New**
+3.  Create database:sqli_lab
 4. Click **Create**
 
 ---
@@ -56,6 +56,7 @@ Add files:
 Go to **SQL tab** and run:
 
 ---sql
+###
 CREATE TABLE users (
     id INT AUTO_INCREMENT PRIMARY KEY,
     username VARCHAR(50),
@@ -71,29 +72,25 @@ VALUES ('admin', 'admin123');
 
 Open:**http://localhost/sql_injection_lab/home.php**
 
-🧪 Testing
-✅ Normal Login
-Username: admin
-Password: admin123
-✔️ Result: Login Successful
-⚠️ SQL Injection Attack
-
-Enter:
-
-' OR 1=1 -- -
-Password: anything
-
-✔️ Result: Login Successful
+### 🧪 Testing
+1. ✅ Normal Login
+2. Username: admin
+3. Password: admin123
+4.✔️ Result: Login Successful
+### ⚠️ SQL Injection Attack
+1. Enter:' OR 1=1 -- -
+2. Password: anything
+3. ✔️ Result: Login Successful
 
 👉 Demonstrates authentication bypass
 
-🔐 Prevention Implemented
-Prepared Statements (Parameterized Queries)
-Input Validation
-Secure Database Query Execution
+### 🔐 Prevention Implemented
+1. Prepared Statements (Parameterized Queries)
+2. Input Validation
+3. Secure Database Query Execution
 
-🎯 Learning Outcomes
-Understanding SQL Injection attacks
-Identifying web vulnerabilities
-Implementing secure coding practices
-Working with XAMPP and phpMyAdmin
+### 🎯 Learning Outcomes
+1. Understanding SQL Injection attacks
+2. Identifying web vulnerabilities
+3. Implementing secure coding practices
+4. Working with XAMPP and phpMyAdmin
