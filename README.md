@@ -1,16 +1,16 @@
 # SQL Injection Detection & Prevention System
 
 ## 📌 Overview
-This project demonstrates SQL Injection vulnerabilities in web applications and implements secure coding techniques to prevent such attacks. It highlights how insecure input handling can lead to authentication bypass and how to fix it using best practices.
+This project demonstrates SQL Injection vulnerabilities in web applications and implements secure coding techniques to prevent such attacks. It shows how attackers can bypass authentication and how to fix it using secure practices.
 
 ---
 
 ## 🚀 Features
-- Demonstrates SQL Injection attack scenarios
+- SQL Injection attack demonstration
 - Authentication bypass simulation
 - Error-based SQL Injection analysis
-- Secure login implementation using prepared statements
-- Input validation to prevent malicious queries
+- Secure login using prepared statements
+- Input validation and sanitization
 
 ---
 
@@ -18,46 +18,82 @@ This project demonstrates SQL Injection vulnerabilities in web applications and 
 - PHP
 - MySQL
 - HTML, CSS
-- XAMPP (Local Server)
+- XAMPP (Apache Server)
+- phpMyAdmin
 
 ---
 
-## ⚠️ Vulnerabilities Demonstrated
-- SQL Injection via login form
-- Authentication bypass using malicious input
-- Exposure of SQL error messages
+## ⚙️ Setup Instructions
+
+### 🔹 Step 1: Start XAMPP
+1. Open XAMPP Control Panel  
+2. Start **Apache**  
+3. Start **MySQL**
 
 ---
 
-## 🔐 Security Fixes Implemented
-- Prepared Statements (Prevents SQL Injection)
-- Input Validation & Sanitization
-- Secure query handling
+### 🔹 Step 2: Create Project Folder
+Go to:C:\xampp\htdocs
+Create folder:sql_injection_lab
+
+Add files:
+- home.php  
+- index.php  
+- login.php  
+- db.php  
 
 ---
 
-## 🧪 How to Run the Project
-1. Install XAMPP
-2. Start Apache and MySQL
-3. Place project folder in `htdocs`
-4. Import database into phpMyAdmin
-5. Run the project on:**http://localhost/project-folder-name**
-
+### 🔹 Step 3: Create Database (phpMyAdmin)
+1. Open browser:**http://localhost/phpmyadmin**
+2. Click **New**
+3. Create database:sqli_lab
+4. Click **Create**
 
 ---
 
-## 🎯 Learning Outcomes
-- Understanding SQL Injection attacks
-- Identifying web application vulnerabilities
-- Implementing secure coding practices
-- Working with local server environments
+### 🔹 Step 4: Create Users Table
+Go to **SQL tab** and run:
+
+---sql
+CREATE TABLE users (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    username VARCHAR(50),
+    password VARCHAR(50)
+);
+---
+### 🔹Step 5: Insert Test User
+INSERT INTO users (username, password)
+VALUES ('admin', 'admin123');
 
 ---
+### 🔹 Step 6: Run the Project
 
-## 📷 Screenshots (Optional)
-(Add login page / attack demo screenshots here)
+Open:**http://localhost/sql_injection_lab/home.php**
 
----
+🧪 Testing
+✅ Normal Login
+Username: admin
+Password: admin123
+✔️ Result: Login Successful
+⚠️ SQL Injection Attack
 
-## 📌 Author
-**Damarla Chandu**
+Enter:
+
+' OR 1=1 -- -
+Password: anything
+
+✔️ Result: Login Successful
+
+👉 Demonstrates authentication bypass
+
+🔐 Prevention Implemented
+Prepared Statements (Parameterized Queries)
+Input Validation
+Secure Database Query Execution
+
+🎯 Learning Outcomes
+Understanding SQL Injection attacks
+Identifying web vulnerabilities
+Implementing secure coding practices
+Working with XAMPP and phpMyAdmin
